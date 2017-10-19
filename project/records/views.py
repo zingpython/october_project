@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 
 from records.models import Post
 
@@ -27,6 +28,26 @@ class PostUpdateView(UpdateView):
 	template_name_suffix = '_update_form'
 
 
-# class PostDeleteView(DeleteView):
+class PostDeleteView(DeleteView):
+	model = Post
+	success_url = reverse_lazy('list_posts')
 
-# 	model = Post
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
